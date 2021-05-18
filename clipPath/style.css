@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+}
+.container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #222;
+}
+.container .clip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+.container .clip.clip1{
+    background: url(/mountains-736886_1280.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 45% 0, 17% 100%, 0% 100%);
+}
+.container .clip.clip2{
+    background: url(/hong-kong-1990268_1280.jpg);
+    background-size: cover;
+    clip-path: polygon(45% 0, 100% 0, 44% 100%, 14% 100%);
+}
+.container .clip.clip3{
+    background: url(/rocks-15712_1280.jpg);
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 41% 100%);
+}
+.container:hover .clip{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.container .clip:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.content{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 70%;
+    padding: 20px;
+    background: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+.container .clip:hover .content{
+    bottom: 0;
+    opacity: 1;
+}
